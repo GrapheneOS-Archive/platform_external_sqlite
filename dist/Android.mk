@@ -45,6 +45,8 @@ include $(CLEAR_VARS)
 LOCAL_SRC_FILES := $(common_src_files)
 
 LOCAL_CFLAGS += $(device_sqlite_flags)
+LOCAL_CLANG := true
+LOCAL_SANITIZE = shift signed-integer-overflow
 
 LOCAL_SHARED_LIBRARIES := libdl
 
@@ -68,6 +70,8 @@ include $(CLEAR_VARS)
 LOCAL_SRC_FILES := $(common_src_files)
 LOCAL_LDLIBS += -lpthread -ldl
 LOCAL_CFLAGS += $(minimal_sqlite_flags)
+LOCAL_CLANG := true
+LOCAL_SANITIZE = shift signed-integer-overflow
 LOCAL_MODULE:= libsqlite
 LOCAL_SHARED_LIBRARIES += libicuuc-host libicui18n-host
 LOCAL_STATIC_LIBRARIES := liblog libutils libcutils
@@ -100,6 +104,8 @@ LOCAL_SHARED_LIBRARIES := libsqlite \
 LOCAL_STATIC_LIBRARIES := libicuandroid_utils
 
 LOCAL_CFLAGS += $(device_sqlite_flags)
+LOCAL_CLANG := true
+LOCAL_SANITIZE = shift signed-integer-overflow
 
 LOCAL_MODULE_PATH := $(TARGET_OUT_OPTIONAL_EXECUTABLES)
 
@@ -142,6 +148,8 @@ include $(BUILD_HOST_EXECUTABLE)
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES := $(common_src_files)
 LOCAL_CFLAGS += $(minimal_sqlite_flags)
+LOCAL_CLANG := true
+LOCAL_SANITIZE = shift signed-integer-overflow
 LOCAL_MODULE:= libsqlite_static_minimal
 LOCAL_SDK_VERSION := 23
 include $(BUILD_STATIC_LIBRARY)
