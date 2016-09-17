@@ -55,6 +55,8 @@ LOCAL_SRC_FILES := $(common_src_files)
 
 LOCAL_CFLAGS += $(device_sqlite_flags)
 LOCAL_CFLAGS_linux += $(minimal_linux_flags)
+LOCAL_CLANG := true
+LOCAL_SANITIZE = shift signed-integer-overflow
 
 LOCAL_SHARED_LIBRARIES := libdl
 
@@ -116,6 +118,8 @@ LOCAL_STATIC_LIBRARIES := libicuandroid_utils
 
 LOCAL_CFLAGS += $(device_sqlite_flags)
 LOCAL_CFLAGS_linux += $(minimal_linux_flags)
+LOCAL_CLANG := true
+LOCAL_SANITIZE = shift signed-integer-overflow
 
 LOCAL_MODULE_PATH := $(TARGET_OUT_OPTIONAL_EXECUTABLES)
 
@@ -162,6 +166,8 @@ LOCAL_TIDY_CHECKS := $(common_local_tidy_checks)
 LOCAL_SRC_FILES := $(common_src_files)
 LOCAL_CFLAGS += $(minimal_sqlite_flags)
 LOCAL_CFLAGS_linux += $(minimal_linux_flags)
+LOCAL_CLANG := true
+LOCAL_SANITIZE = shift signed-integer-overflow
 LOCAL_MODULE:= libsqlite_static_minimal
 LOCAL_SDK_VERSION := 23
 LOCAL_EXPORT_C_INCLUDE_DIRS := $(LOCAL_PATH)
