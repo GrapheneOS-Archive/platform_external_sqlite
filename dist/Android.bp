@@ -46,6 +46,10 @@ cc_defaults {
             cflags: ["-DHAVE_POSIX_FALLOCATE=1"],
         },
     },
+
+    sanitize: {
+        misc_undefined: ["shift", "signed-integer-overflow"]
+    }
 }
 
 cc_defaults {
