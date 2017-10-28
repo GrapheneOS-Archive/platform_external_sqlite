@@ -48,7 +48,7 @@ cc_defaults {
     },
 
     sanitize: {
-        misc_undefined: ["shift", "signed-integer-overflow"]
+        misc_undefined: ["object-size", "shift", "signed-integer-overflow"]
     }
 }
 
